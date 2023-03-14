@@ -1,0 +1,200 @@
+10/03/23
+
++ Khai báo mảng :
+Ví dụ :
+int [] numbers = new int [5]     // Khởi tạo 1 mảng gồm 5 phần tử với giá trị mặc định là 0.    // [0,0,0,0,0]
+int [] numbers = {1,7,5,1}       // Khai báo nhanh 1 mảng
++ Độ dài mảng : numbers[i]
+
+Bài tập về nhà :
+
+BT1: Tính tổng các giá trị trong mảng
+BT2: Đếm xem mảng có bao nhiêu số chẵn
+BT3: Tìm giá trị nhỏ nhất của mảng
+BT4: Thêm phần tử vào mảng
+BT5: Xóa phần tử khỏi mảng
+BT6: Gộp 2 mảng a, b lại với nhau
+
++ Lớp Wrapper trong java
+
+Từ J2SE 5.0, tính năng autoboxing và unboxing chuyển đổi kiểu dữ liệu nguyên thủy thành kiểu đối tượng 
+và từ đối tượng thành kiểu dữ liệu nguyên thủy một cách tự động. 
+Sự chuyển đổi tự động kiểu dữ liệu nguyên thủy thành kiểu đối tượng 
+được gọi là autoboxing và ngược lại được gọi là unboxing.
+
+Trong java, có 8 lớp Wrapper chúng được thiết kế trong gói java.lang.
+Nguyên Thủy :  boolean  char      byte  short   int     long   float   double
+                ↓       ↓         ↓     ↓      ↓       ↓      ↓       ↓
+Kiểu Wrapper : Boolean  Character Byte  Short  Integer  Long   Float  Double
+
+Ví dụ :
+
+public class WrapperExample1 {
+    public static void main(String args[]) {
+        // Đổi int thành Integer
+        int a = 20;
+        Integer i = Integer.valueOf(a);  // Đổi int thành Integer
+        Integer j = a;  // autoboxing, tự động đổi int thành Integer trong nội bộ trình biên dịch
+ 
+        System.out.println(a + " " + i + " " + j);
+    }
+}
+
++ Kiểu tham chiếu và tham trị trong Java
+
+Truyền tham trị (Pass by Value):
+Khi truyền tham trị vào phương thức, giá trị của biến được sao chép vào một tham số khác trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ không ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
+
+Truyền tham chiếu (Pass by Reference):
+Khi truyền tham chiếu vào phương thức, địa chỉ của biến được sao chép vào tham số trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
+
+13/03/23
+
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
+
+// In có xuống dòng
+System.out.println();
+
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
+
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
+
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
+
+14/03/2023
+- Print format trong Java :
+  + Printf giúp việc in ra màn hình theo một định dạng đã quy ước nào đó tiện lợi hơn.
+  + Printf giúp việc code và xử lý trở nên đơn giản và linh hoạt hơn.
+
+- Tác dụng printf, println, print :
+  + Print: Xuất kết quả ra màn hình nhưng con trỏ chuột không xuống dòng.
+  + Println: Xuất kết quả ra màn hình đồng thời con trỏ chuột nhảy xuống dòng tiếp theo.
+  + Printf: Xuất ra màng hình kết quả đồng thời có thể định dạng được kết quả đó nhờ vào các đối số thích hợp.
+
+Vd : 
+- Print:
+
+public class Print {
+    public static void main(String[] args) {
+        System.out.print("Tôi yêu lập trình.");
+        System.out.print("Thích Java và uống cafe.");
+    }
+}
+
+- Println:
+
+public class Print {
+    public static void main(String[] args) {
+        System.out.println("Tôi yêu lập trình.");
+        System.out.println("Thích Java và uống cafe.");
+    }
+}
+
+- Printf:
+
+public class Printf {
+    public static void main(String[] args) {
+        System.out.printf("%s\n%s", "Tôi yêu lập trình.", "Thích Java và uống cafe.");
+    }
+}
+
+- Ví dụ sử dụng Printf trong Java:
+  + Cú pháp:
+
+System.out.printf(local, format, arguments1, arguments2,…, argumentsn);
+
+- Trong đó:
+
+  + Local: Nếu khác null sẽ được tự động định dạng theo khu vực.
+  + format: Quy định chuẩn định dạng đầu ra cho các đối số
+  + Các argument: Đối số cần định dạng.
+
+- Các bộ định dạng có sẵn trong Printf:
+
+%c: Ký tự
+%d: Số thập phân (số nguyên) (cơ số 10)
+%e: Dấu phẩy động theo cấp số nhân
+%f: Dấu phẩy động
+%i: Số nguyên (cơ sở 10)
+%o: Số bát phân (cơ sở 8)
+%s: Chuỗi
+%u: Số thập phân (số nguyên) không dấu
+%x: Số trong hệ thập lục phân (cơ sở 16)
+%t: Định dạng ngày / giờ
+%%: Dấu phần trăm
+\%: Dấu phần trăm
+
+- Từ khóa class
+  + Từ khóa "class" được sử dụng để định nghĩa một lớp (class) trong chương trình Java. Lớp là một khái niệm quan trọng trong Java và được sử dụng để đóng gói dữ liệu và hành vi liên quan trong một đối tượng (object).
+
+VD :
+Cú pháp định nghĩa một lớp trong Java:
+
+access modifier class ClassName {
+  // variables(biến), constructors(hàm), methods(phương thức)
+}
+
+- Từ khóa new
+  + Từ khóa "new" được sử dụng để tạo một đối tượng mới từ một lớp (class) đã được định nghĩa trước đó. Khi sử dụng từ khóa "new", Java sẽ cấp phát bộ nhớ cho đối tượng và gọi constructor của lớp để khởi tạo đối tượng.
+
+VD : Cú pháp sử dụng từ khóa "new" trong Java:
+
+ClassName objectName = new ClassName();
+
+- Phương thức khởi tạo:
+
+  + Phương thức khởi tạo (Constructor) là một phương thức đặc biệt được sử dụng để khởi tạo đối tượng của một lớp (class) khi nó được tạo ra bằng từ khóa "new". Phương thức khởi tạo có tên giống với tên của lớp và không có kiểu trả về.
+
+VD : 
+Cú pháp khai báo phương thức khởi tạo trong Java:
+
+access_modifier ClassName(parameter_list) {
+  // Khởi tạo các biến thành viên
+  // Thực hiện các thao tác khác cần thiết
+}
+
+- Cách truy xuất các phương thức:
+  + Để truy xuất các thuộc tính và phương thức của một đối tượng, chúng ta sử dụng toán tử chấm (.) sau tên đối tượng để tham chiếu đến thuộc tính hoặc phương thức mong muốn.
+
+VD : Cú pháp truy xuất thuộc tính và phương thức của một đối tượng trong Java:
+
+objectName.propertyName;   // Truy xuất thuộc tính của đối tượng
+objectName.methodName();   // Gọi phương thức của đối tượng
+
+- Getter trong Java:
+  + Getter là một phương thức đặc biệt được sử dụng để truy xuất giá trị của một thuộc tính (property) trong một đối tượng. Phương thức Getter thường được sử dụng để truy xuất giá trị của một thuộc tính private (riêng tư) trong một lớp, giúp đảm bảo tính bao đóng (encapsulation) trong lập trình hướng đối tượng.
+
+Phương thức Getter có thể trả về giá trị của thuộc tính hoặc trả về một đối tượng mới mà sao chép giá trị của thuộc tính.
+
+VD : Cú pháp khai báo phương thức Getter trong Java:
+
+access_modifier returnType getPropertyName() {
+  return propertyName;
+}
+Trong đó:
+
+access_modifier: là quyền truy cập của phương thức, có thể là public, private hoặc protected.
+returnType: là kiểu dữ liệu của giá trị trả về của phương thức Getter.
+getPropertyName: là tên của phương thức Getter, theo quy tắc đặt tên của phương thức trong Java.
+propertyName: là tên của thuộc tính cần truy xuất giá trị.
+
+- Setter trong Java:
+  + Setter là một phương thức đặc biệt được sử dụng để thiết lập (set) giá trị của một thuộc tính (property) trong một đối tượng. Phương thức Setter thường được sử dụng để thiết lập giá trị cho một thuộc tính private (riêng tư) trong một lớp, giúp đảm bảo tính bao đóng (encapsulation) trong lập trình hướng đối tượng.
+
+Phương thức Setter có thể nhận tham số để thiết lập giá trị của thuộc tính hoặc nhận một đối tượng mới để gán giá trị cho thuộc tính.
+
+VD : Cú pháp khai báo phương thức Setter trong Java:
+
+access_modifier void setPropertyName(parameter) {
+  propertyName = parameter;
+}
+Trong đó:
+
+access_modifier: là quyền truy cập của phương thức, có thể là public, private hoặc protected.
+void: là kiểu dữ liệu trả về của phương thức Setter, bởi vì phương thức chỉ được sử dụng để thiết lập giá trị cho thuộc tính, không trả về giá trị nào.
+setPropertyName: là tên của phương thức Setter, theo quy tắc đặt tên của phương thức trong Java.
+parameter: là tham số đầu vào của phương thức Setter, chứa giá trị mới của thuộc tính cần thiết lập.
