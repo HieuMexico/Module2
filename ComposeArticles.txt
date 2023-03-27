@@ -1,0 +1,333 @@
+-------10/03/23-------
+
++ Khai báo mảng :
+Ví dụ :
+int [] numbers = new int [5]     // Khởi tạo 1 mảng gồm 5 phần tử với giá trị mặc định là 0.    // [0,0,0,0,0]
+int [] numbers = {1,7,5,1}       // Khai báo nhanh 1 mảng
++ Độ dài mảng : numbers[i]
+
+Bài tập về nhà :
+
+BT1: Tính tổng các giá trị trong mảng
+BT2: Đếm xem mảng có bao nhiêu số chẵn
+BT3: Tìm giá trị nhỏ nhất của mảng
+BT4: Thêm phần tử vào mảng
+BT5: Xóa phần tử khỏi mảng
+BT6: Gộp 2 mảng a, b lại với nhau
+
++ Lớp Wrapper trong java
+
+Từ J2SE 5.0, tính năng autoboxing và unboxing chuyển đổi kiểu dữ liệu nguyên thủy thành kiểu đối tượng 
+và từ đối tượng thành kiểu dữ liệu nguyên thủy một cách tự động. 
+Sự chuyển đổi tự động kiểu dữ liệu nguyên thủy thành kiểu đối tượng 
+được gọi là autoboxing và ngược lại được gọi là unboxing.
+
+Trong java, có 8 lớp Wrapper chúng được thiết kế trong gói java.lang.
+Nguyên Thủy :  boolean  char      byte  short   int     long   float   double
+                ↓       ↓         ↓     ↓      ↓       ↓      ↓       ↓
+Kiểu Wrapper : Boolean  Character Byte  Short  Integer  Long   Float  Double
+
+Ví dụ :
+
+public class WrapperExample1 {
+    public static void main(String args[]) {
+        // Đổi int thành Integer
+        int a = 20;
+        Integer i = Integer.valueOf(a);  // Đổi int thành Integer
+        Integer j = a;  // autoboxing, tự động đổi int thành Integer trong nội bộ trình biên dịch
+ 
+        System.out.println(a + " " + i + " " + j);
+    }
+}
+
++ Kiểu tham chiếu và tham trị trong Java
+
+Truyền tham trị (Pass by Value):
+Khi truyền tham trị vào phương thức, giá trị của biến được sao chép vào một tham số khác trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ không ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
+
+Truyền tham chiếu (Pass by Reference):
+Khi truyền tham chiếu vào phương thức, địa chỉ của biến được sao chép vào tham số trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
+
+-------13/03/23-------
+
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
+
+// In có xuống dòng
+System.out.println();
+
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
+
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
+
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
+
+-------14/03/2023-------
+- Print format trong Java :
+  + Printf giúp việc in ra màn hình theo một định dạng đã quy ước nào đó tiện lợi hơn.
+  + Printf giúp việc code và xử lý trở nên đơn giản và linh hoạt hơn.
+
+- Tác dụng printf, println, print :
+  + Print: Xuất kết quả ra màn hình nhưng con trỏ chuột không xuống dòng.
+  + Println: Xuất kết quả ra màn hình đồng thời con trỏ chuột nhảy xuống dòng tiếp theo.
+  + Printf: Xuất ra màng hình kết quả đồng thời có thể định dạng được kết quả đó nhờ vào các đối số thích hợp.
+
+Vd : 
+- Print:
+
+public class Print {
+    public static void main(String[] args) {
+        System.out.print("Tôi yêu lập trình.");
+        System.out.print("Thích Java và uống cafe.");
+    }
+}
+
+- Println:
+
+public class Print {
+    public static void main(String[] args) {
+        System.out.println("Tôi yêu lập trình.");
+        System.out.println("Thích Java và uống cafe.");
+    }
+}
+
+- Printf:
+
+public class Printf {
+    public static void main(String[] args) {
+        System.out.printf("%s\n%s", "Tôi yêu lập trình.", "Thích Java và uống cafe.");
+    }
+}
+
+- Ví dụ sử dụng Printf trong Java:
+  + Cú pháp:
+
+System.out.printf(local, format, arguments1, arguments2,…, argumentsn);
+
+- Trong đó:
+
+  + Local: Nếu khác null sẽ được tự động định dạng theo khu vực.
+  + format: Quy định chuẩn định dạng đầu ra cho các đối số
+  + Các argument: Đối số cần định dạng.
+
+- Các bộ định dạng có sẵn trong Printf:
+
+%c: Ký tự
+%d: Số thập phân (số nguyên) (cơ số 10)
+%e: Dấu phẩy động theo cấp số nhân
+%f: Dấu phẩy động
+%i: Số nguyên (cơ sở 10)
+%o: Số bát phân (cơ sở 8)
+%s: Chuỗi
+%u: Số thập phân (số nguyên) không dấu
+%x: Số trong hệ thập lục phân (cơ sở 16)
+%t: Định dạng ngày / giờ
+%%: Dấu phần trăm
+\%: Dấu phần trăm
+
+- Từ khóa class
+  + Từ khóa "class" được sử dụng để định nghĩa một lớp (class) trong chương trình Java. Lớp là một khái niệm quan trọng trong Java và được sử dụng để đóng gói dữ liệu và hành vi liên quan trong một đối tượng (object).
+
+VD :
+Cú pháp định nghĩa một lớp trong Java:
+
+access modifier class ClassName {
+  // variables(biến), constructors(hàm), methods(phương thức)
+}
+
+- Từ khóa new
+  + Từ khóa "new" được sử dụng để tạo một đối tượng mới từ một lớp (class) đã được định nghĩa trước đó. Khi sử dụng từ khóa "new", Java sẽ cấp phát bộ nhớ cho đối tượng và gọi constructor của lớp để khởi tạo đối tượng.
+
+VD : Cú pháp sử dụng từ khóa "new" trong Java:
+
+ClassName objectName = new ClassName();
+
+- Phương thức khởi tạo:
+
+  + Phương thức khởi tạo (Constructor) là một phương thức đặc biệt được sử dụng để khởi tạo đối tượng của một lớp (class) khi nó được tạo ra bằng từ khóa "new". Phương thức khởi tạo có tên giống với tên của lớp và không có kiểu trả về.
+
+VD : 
+Cú pháp khai báo phương thức khởi tạo trong Java:
+
+access_modifier ClassName(parameter_list) {
+  // Khởi tạo các biến thành viên
+  // Thực hiện các thao tác khác cần thiết
+}
+
+- Cách truy xuất các phương thức:
+  + Để truy xuất các thuộc tính và phương thức của một đối tượng, chúng ta sử dụng toán tử chấm (.) sau tên đối tượng để tham chiếu đến thuộc tính hoặc phương thức mong muốn.
+
+VD : Cú pháp truy xuất thuộc tính và phương thức của một đối tượng trong Java:
+
+objectName.propertyName;   // Truy xuất thuộc tính của đối tượng
+objectName.methodName();   // Gọi phương thức của đối tượng
+
+- Getter trong Java:
+  + Getter là một phương thức đặc biệt được sử dụng để truy xuất giá trị của một thuộc tính (property) trong một đối tượng. Phương thức Getter thường được sử dụng để truy xuất giá trị của một thuộc tính private (riêng tư) trong một lớp, giúp đảm bảo tính bao đóng (encapsulation) trong lập trình hướng đối tượng.
+
+Phương thức Getter có thể trả về giá trị của thuộc tính hoặc trả về một đối tượng mới mà sao chép giá trị của thuộc tính.
+
+VD : Cú pháp khai báo phương thức Getter trong Java:
+
+access_modifier returnType getPropertyName() {
+  return propertyName;
+}
+Trong đó:
+
+access_modifier: là quyền truy cập của phương thức, có thể là public, private hoặc protected.
+returnType: là kiểu dữ liệu của giá trị trả về của phương thức Getter.
+getPropertyName: là tên của phương thức Getter, theo quy tắc đặt tên của phương thức trong Java.
+propertyName: là tên của thuộc tính cần truy xuất giá trị.
+
+- Setter trong Java:
+  + Setter là một phương thức đặc biệt được sử dụng để thiết lập (set) giá trị của một thuộc tính (property) trong một đối tượng. Phương thức Setter thường được sử dụng để thiết lập giá trị cho một thuộc tính private (riêng tư) trong một lớp, giúp đảm bảo tính bao đóng (encapsulation) trong lập trình hướng đối tượng.
+
+Phương thức Setter có thể nhận tham số để thiết lập giá trị của thuộc tính hoặc nhận một đối tượng mới để gán giá trị cho thuộc tính.
+
+VD : Cú pháp khai báo phương thức Setter trong Java:
+
+access_modifier void setPropertyName(parameter) {
+  propertyName = parameter;
+}
+Trong đó:
+
+access_modifier: là quyền truy cập của phương thức, có thể là public, private hoặc protected.
+void: là kiểu dữ liệu trả về của phương thức Setter, bởi vì phương thức chỉ được sử dụng để thiết lập giá trị cho thuộc tính, không trả về giá trị nào.
+setPropertyName: là tên của phương thức Setter, theo quy tắc đặt tên của phương thức trong Java.
+parameter: là tham số đầu vào của phương thức Setter, chứa giá trị mới của thuộc tính cần thiết lập.
+
+-------14/03/2023-------
+
+- Access modifier trong Java :
+  + Public: được truy cập từ bất kỳ nơi nào.
+  + Private: chỉ có thể truy cập từ bên trong cùng lớp.
+  + Protected: có thể truy cập từ bên trong cùng lớp hoặc từ các lớp con (subclass) hoặc các lớp cùng gói (package).
+  + Default (không khai báo access modifier): thành viên có thể truy cập từ bên trong cùng lớp hoặc từ các lớp cùng gói (package).
+
+- Biến static trong Java :
+  + Các kiểu biến trong Java:
+  - Biến local
+  - Biến instance
+  - Biến static
+VD :
+public class Bien {
+    public static float PI = 3.14f;   // Đây là biến static
+    int n;                            // Đây là biến instance
+
+     
+    public Bien () {
+        char c = 'c';                 // Đây là biến local
+    }
+}
+
+- Cú pháp khai báo biến :
+  + DataType varName [ = value] [, varName2] [ = value2]...;
+  + Trong đó, DataType là kiểu dữ liệu của biến, varName là tên biến.
+- Quy tắc đặt tên biến trong Java:
+  + Chỉ được bắt đầu bằng một ký tự(chữ), hoặc một dấu gạch dưới(_), hoặc một ký tự dollar($)
+  + Tên biến không được chứa khoảng trắng
+  + Bắt đầu từ ký tự thứ hai, có thể dùng ký tự(chữ), dấu gạch dưới(_), hoặc ký tự dollar($)
+  + Không được trùng với các từ khóa
+  + Có phân biệt chữ hoa và chữ thường
+
+- Nested class :
+  + Một class nằm trong một class khác được gọi là Nested class. Nested class cho phép nhóm các class chỉ được sử dụng tại một nơi duy nhất, làm tăng tính đóng gói, code dễ đọc và bảo trì hơn.
+  + Có 4 loại nested class trong Java:
+  ☞ Inner class: là lớp được khai báo bên trong một lớp khác và có quyền truy cập vào các thành viên private của lớp bao quanh.
+  ☞ Static nested class: là lớp được khai báo trong một lớp khác và được đánh dấu bởi từ khóa "static". Static nested class không có quyền truy cập vào các thành viên non-static của lớp bao quanh.
+  ☞ Local class: là lớp được khai báo trong một phương thức hoặc khối lệnh và chỉ có thể truy cập các biến final hoặc effective final được khai báo trong phương thức hoặc khối lệnh đó.
+  ☞ Anonymous class: là một loại lớp không được đặt tên, được khai báo bên trong một biểu thức và thường được sử dụng để triển khai các interface hoặc abstract class.
+
+--------15/03/2023-------
+
+- Kế thừa :
+  + Là một tính năng của đối tượng hướng đến lập trình (OOP) cho phép một lớp (class) mới được xây dựng trên cơ sở của một lớp (class) hiện có. Lớp con (subclass) được kế thừa tất cả các phương thức và thuộc tính của lớp cha (superclass), và có thể mở rộng chúng bằng cách thêm các thuộc tính và phương thức mới.
+
+- Override :
+  + Là một tính năng cho phép một lớp con cung cấp một triển khai cụ thể của phương thức đã được cung cấp bởi một trong các lớp cha của nó. Nói dễ hiểu hơn, nếu lớp con có một hoặc nhiều phương thức giống với một trong các lớp cha của nó, thì đó là ghi đè phương thức.
+- Overloading :
+  + Là một tính năng của lập trình hướng đối tượng cho phép các hàm cùng tên nhưng có số lượng hoặc loại tham số khác nhau được định nghĩa trong cùng một lớp. Khi gọi một hàm, trình biên dịch sẽ phân biệt các hàm dựa trên số lượng và/hoặc loại tham số được truyền vào.
+
+- Từ khóa final :
+  + Được sử dụng để chỉ định rằng một biến, một phương thức hoặc một lớp không thể thay đổi sau khi đã được khởi tạo hoặc được định nghĩa.
+☞ Ví dụ:
+
+final int x = 10;
+x = 20; // Lỗi biên dịch - không thể gán giá trị mới cho biến final
+
+- Đa hình trong kế thừa:
+  + Polymorphism trong kế thừa là tính năng của lập trình hướng đối tượng cho phép các đối tượng có thể được sử dụng với nhiều hình thái khác nhau. Nó cho phép bạn xử lý các đối tượng của các lớp con như các đối tượng của lớp cha chung của chúng.
+☞ Cách sử dụng :
+  + Ghi đè phương thức (Method Overriding): là kỹ thuật cho phép lớp con định nghĩa lại một phương thức đã được định nghĩa trong lớp cha và thay đổi cách thức hoạt động của phương thức đó. Khi đối tượng của lớp con được tạo ra và phương thức đó được gọi, phương thức của lớp con sẽ được thực thi thay vì phương thức của lớp cha.
+  + Sử dụng lớp cha làm tham chiếu (Upcasting): là kỹ thuật cho phép bạn sử dụng một đối tượng của lớp con với tham chiếu của lớp cha chung của chúng. Khi đối tượng của lớp con được chuyển đổi sang kiểu của lớp cha, bạn chỉ có thể truy cập các phương thức và thuộc tính của lớp cha chung của đối tượng đó.
+
+- toString :
+  + là một phương thức sử dụng để biểu diễn chuỗi của một đối tượng dưới dạng chuỗi ký tự (String).
+
+-------17/03/2023-------
+
+- Vì sao trong Java không cho đa kế thừa:
+
+  + Vì việc sử dụng đa kế thừa có thể dẫn đến những vấn đề khó giải quyết trong việc quản lý và thiết kế các lớp.
+- Lớp abstract là gì, phương thức abstract là gì. Khi nào sử dụng lớp abstract:
+  + Lớp abstract là một lớp không thể được khởi tạo mà chỉ được sử dụng để tạo ra các lớp con, cung cấp một khung chung để các lớp con có thể kế thừa và triển khai các phương thức và thuộc tính của lớp abstract.
+  + Phương thức abstract là một phương thức mà không có thân phương thức. Có nghĩa là các phương thức abstract chỉ khai báo tên phương thức và kiểu giá trị trả về mà không cung cấp bất kỳ thực thi nào cho phương thức đó.
+
+- Khi sử dụng lớp abstract:
+
+  + Khi muốn tạo ra một lớp chung, tuy nhiên lớp này không thể được khởi tạo vì nó chỉ cung cấp một khung chung để các lớp con có thể kế thừa.
+  + Khi muốn cung cấp một danh sách các phương thức mà các lớp con của lớp abstract phải triển khai. Điều này giúp đảm bảo tính nhất quán và đơn giản hóa mã nguồn.
+  + Khi muốn giấu đi một số chi tiết triển khai của lớp con khỏi các lớp khác sử dụng. Lớp abstract cho phép bạn giữ các phương thức và thuộc tính riêng tư và chỉ tiết lộ các phương thức và thuộc tính được định nghĩa công khai.
+
+- Các tính chất của lớp abstract:
+
+  1.Không thể tạo đối tượng: Không thể tạo đối tượng trực tiếp từ lớp abstract. Lớp abstract chỉ được sử dụng để tạo ra các lớp con mà kế thừa từ nó.
+  2.Có thể chứa phương thức abstract: Lớp abstract có thể chứa các phương thức abstract, nghĩa là các phương thức mà chỉ định nghĩa và kiểu trả về của phương thức mà không có thân phương thức, phương thức abstract được triển khai trong các lớp con.
+  3.Có thể chứa phương thức không abstract: Lớp abstract có thể chứa các phương thức bình thường, nghĩa là các phương thức có thân phương thức.
+  4.Có thể chứa thuộc tính: Lớp abstract có thể chứa các thuộc tính, giống như các lớp thông thường khác.
+  5.Có thể kế thừa từ lớp khác: Lớp abstract có thể kế thừa từ lớp khác bằng cách sử dụng từ khóa extends.
+  6.Không thể kế thừa từ lớp khác khi lớp abstract đã kế thừa một lớp: Lớp abstract không thể kế thừa từ lớp khác nếu lớp abstract đã kế thừa một lớp. Trong Java, một lớp chỉ có thể kế thừa từ một lớp khác.
+  7.Phải triển khai tất cả phương thức abstract: Nếu một lớp kế thừa từ lớp abstract chứa một phương thức abstract, lớp con đó phải triển khai lại phương thức đó.
+
+  - Lớp abstract được sử dụng để tạo ra các lớp con với tính chất kế thừa và triển khai các phương thức và thuộc tính được định nghĩa trong lớp abstract. Lớp abstract cung cấp một khung chung cho các lớp con mà có thể được tùy chỉnh để đáp ứng các yêu cầu cụ thể.
+
+- Interface:
+
+  + là một kiểu dữ liệu tham chiếu trong Java. Nó là tập hợp các phương thức abstract (trừu tượng). Khi một lớp kế thừa interface, thì nó sẽ kế thừa những phương thức abstract của interface đó.
+  * Đặc điểm :
+  + Không thể khởi tạo, nên không có phương thức khởi tạo.
+  + Tất cả các phương thức trong interface luôn ở dạng public abstract mà không cần khai báo.
+  + Các thuộc tính trong interface luôn ở dạng public static final mà không cần khai báo, yêu cầu phải có giá trị.
+
+  * Tính chất :
+
+  + Interface thường chỉ được khai báo về mặt phương thức vì nó khá trừu tượng. Nó không chứa phần định nghĩa vì chỉ chứa mình khai báo (giống như phương thức thuần ảo nhưng lại không cần phải khai từ khóa Abstract) Không chứa các thuộc tính dù là biến tĩnh hay hằng số
+
+-  Khi nào dùng abstrac khi nào dùng interface:
+
+  + Abstract Class: Được sử dụng khi bạn muốn xác định một lớp trừu tượng, có thể chứa các phương thức trừu tượng và phương thức cụ thể, nhưng không thể khởi tạo một đối tượng từ lớp đó. Abstract class cung cấp một nền tảng cho các lớp con để thừa kế và triển khai phương thức của chúng. Abstract class cũng có thể chứa các thuộc tính và phương thức đã được triển khai.
+  + Interface: Được sử dụng để định nghĩa một tập hợp các phương thức trừu tượng và thuộc tính không được triển khai, định nghĩa các phương thức này để đảm bảo rằng các lớp triển khai giao diện sẽ có cùng một cách hoạt động. Các lớp triển khai giao diện phải cung cấp thân phương thức cho các phương thức đã được khai báo trong giao diện. Một lớp có thể triển khai nhiều giao diện khác nhau.
+
+-------27/03/2023-------
+
+- Stack:
+  + Stack là một cấu trúc dữ liệu danh sách trong đó việc thêm và lấy các phần tử được thực hiện theo quy tắc FILO (Fist-In/Last-Out).
+
+ •  Các phương thức của Stack là:
+   + empty(): Kiểm tra Stack có rỗng không
+   + peek(): Trả về phần tử trên cùng của Stack
+   + pop(): Trả về và xóa phần tử trên cùng của Stack
+   + push(): Thêm một phần tử vào trên cùng của Stack
+   + search : Tìm kiếm trả về index của Stack 
+
+- Queue:
+  + Queue là một cấu trúc dữ liệu danh sách, trong đó việc thêm và lấy các phần tử được thực hiện theo quy tắc FIFO (Fist-In/Last-Out).
+•  Các phương thức Queue là:
+   + offer(): Thêm phần tử vào Queue
+   + poll(): Lấy phần tử ở phần đầu của queue hoặc trả về null nếu rỗng
+   + remove(): Lấy và xóa phần tử ở phần đầu của Queue và tung ngoại lệ nếu rỗng
+   + peek(): Lấy phần tử ở phần đầu của Queue hoặc trả về null nếu rỗng
+   + element(): Lấy phần tử ở phần đầu của Queue và tung ngoại lệ nếu rỗng
